@@ -127,4 +127,64 @@
   <data name="action_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\action_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Form1_Form1_FFXI_not_found" xml:space="preserve">
+    <value>FFXI not found</value>
+  </data>
+  <data name="Form1_LevellingTimer_Tick_Killed__" xml:space="preserve">
+    <value>Killed: </value>
+  </data>
+  <data name="Form1_StartBotting_Click_START" xml:space="preserve">
+    <value>START</value>
+  </data>
+  <data name="Form1_StartBotting_Click_STOP" xml:space="preserve">
+    <value>STOP</value>
+  </data>
+  <data name="Form1_WPRecord_Click_Record" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="Form1_WPRecord_Click_Recording" xml:space="preserve">
+    <value>Recording</value>
+  </data>
+  <data name="Form1_WPDelete_Click_Way_Points_Cleared" xml:space="preserve">
+    <value>Way Points Cleared</value>
+  </data>
+  <data name="Form1_button3_Click_Test_WPs" xml:space="preserve">
+    <value>Test WPs</value>
+  </data>
+  <data name="Form1_button3_Click_Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="Form1_LoadWayPointsBtn_Click_XI_Way_Points___xiwps" xml:space="preserve">
+    <value>XI Way Points|*.xiwps</value>
+  </data>
+  <data name="Form1_LoadWayPointsBtn_Click_Loaded_Waypoints" xml:space="preserve">
+    <value>Loaded Waypoints</value>
+  </data>
+  <data name="Form1_SaveWayPointsBtn_Click_Saved_Waypoints" xml:space="preserve">
+    <value>Saved Waypoints</value>
+  </data>
+  <data name="Form1_LoadMobListBtn_Click_XI_Mob_List___ximbl" xml:space="preserve">
+    <value>XI Mob List|*.ximbl</value>
+  </data>
+  <data name="Form1_SaveMobListBtn_Click_Saved_Mob_List" xml:space="preserve">
+    <value>Saved Mob List</value>
+  </data>
+  <data name="Form1_LoadWSListBtn_Click_Loaded_Skill_List" xml:space="preserve">
+    <value>Loaded Skill List</value>
+  </data>
+  <data name="Form1_SaveWSListBtn_Click_XI_Skill_List___xiwsl" xml:space="preserve">
+    <value>XI Skill List|*.xiwsl</value>
+  </data>
+  <data name="Form1_SaveWSListBtn_Click_Saved_Skill_List" xml:space="preserve">
+    <value>Saved Skill List</value>
+  </data>
+  <data name="Form1_checkBox1_CheckedChanged_Auto_heal_for__" xml:space="preserve">
+    <value>Auto heal for: </value>
+  </data>
+  <data name="Form1_checkBox1_CheckedChanged_1__will_auto_follow__" xml:space="preserve">
+    <value> will auto follow: </value>
+  </data>
+  <data name="Form1_checkBox1_CheckedChanged__activated__Heal_" xml:space="preserve">
+    <value> activated. Heal@</value>
+  </data>
 </root>

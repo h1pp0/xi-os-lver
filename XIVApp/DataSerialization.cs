@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace XIVApp
 {
@@ -9,9 +7,9 @@ namespace XIVApp
     public class DataSerialization
     {
         // prop here
-        public string something1 = "test1";
-        public string somethign2 = "test2";
-        public int someint = 55;
+        //public string something1 = "test1";
+        //public string somethign2 = "test2";
+        //public int someint = 55;
         public DataSerialization()
         {
             // Constructor

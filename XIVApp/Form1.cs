@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.Xml.Serialization;
+using XIVApp.Properties;
 
 namespace XIVApp
 {
@@ -35,7 +36,7 @@ namespace XIVApp
             if (1 > pol.Length)
             {
                 //let the user know what went wrong
-                MessageBox.Show("FFXI not found");
+                MessageBox.Show(Resources.Form1_Form1_FFXI_not_found);
                 System.Environment.Exit(0);     //close the form
                 return;
             }
@@ -242,15 +243,15 @@ namespace XIVApp
         }
 
         // Buff Information
-        private int buff_Protect = (1800 * 2);
+        private const int buff_Protect = (1800*2);
         private bool buff_Protect_on = false;
         private int buff_Protect_timer = 0;
 
-        private int buff_Shell = (1800 * 2);
+        private const int buff_Shell = (1800*2);
         private bool buff_Shell_on = false;
         private int buff_Shell_timer = 0;
 
-        private int casting_duration = (5 * 2);
+        private const int casting_duration = (5*2);
         private int casting_timer = 0;
         private bool casting = false;
 
@@ -529,7 +530,7 @@ namespace XIVApp
             EXPGainedValue.Text = string.Format("{0:###,###,###}", Gained_EXP_Value);
             StartDelayShow.Text = Start_Delay_timer + " / " + Start_Delay;
             LevelsGainedValue.Text = Gained_Levels_Value.ToString();
-            MobsKilledAmount.Text = "Killed: " + Killed_Mob_Amount;
+            MobsKilledAmount.Text = Resources.Form1_LevellingTimer_Tick_Killed__ + Killed_Mob_Amount;
             #endregion
 
             #region Check for new EXP for stats
@@ -1089,7 +1090,7 @@ namespace XIVApp
                 WPTesting.Enabled = false;
 
                 // Change text on button
-                StartBotting.Text = "START";
+                StartBotting.Text = Resources.Form1_StartBotting_Click_START;
 
                 if (Session.Player.ViewMode != ViewMode.ThirdPerson)
                 {
@@ -1129,7 +1130,7 @@ namespace XIVApp
                 Levelling_Running = true;
 
                 // Change text on button
-                StartBotting.Text = "STOP";
+                StartBotting.Text = Resources.Form1_StartBotting_Click_STOP;
 
                 if (Session.Player.ViewMode != ViewMode.FirstPerson)
                 {
@@ -1147,13 +1148,13 @@ namespace XIVApp
             {
                 WaypointRecrd.Enabled = false;
                 RecodingLabel.Text = "---------";
-                WPRecord.Text = "Record";
+                WPRecord.Text = Resources.Form1_WPRecord_Click_Record;
             }
             else
             {
                 WaypointRecrd.Enabled = true;
-                RecodingLabel.Text = "Recording";
-                WPRecord.Text = "STOP";
+                RecodingLabel.Text = Resources.Form1_WPRecord_Click_Recording;
+                WPRecord.Text = Resources.Form1_StartBotting_Click_STOP;
             }
         }
 
@@ -1166,7 +1167,7 @@ namespace XIVApp
             Way_Points_Z.Clear();
 
             // Confirm
-            InformationLabel.Text = "Way Points Cleared";
+            InformationLabel.Text = Resources.Form1_WPDelete_Click_Way_Points_Cleared;
         }
 
         // Record Way Points
@@ -1180,7 +1181,7 @@ namespace XIVApp
             }
             else
             {
-                RecodingLabel.Text = "Recording";
+                RecodingLabel.Text = Resources.Form1_WPRecord_Click_Recording;
                 Record_Label_Status = true;
             }
 
@@ -1212,12 +1213,12 @@ namespace XIVApp
             if (WPTesting.Enabled == true)
             {
                 WPTesting.Enabled = false;
-                TestWPBtn.Text = "Test WPs";
+                TestWPBtn.Text = Resources.Form1_button3_Click_Test_WPs;
                 Session.Navigator.Reset();
             }
             else
             {
-                TestWPBtn.Text = "Running";
+                TestWPBtn.Text = Resources.Form1_button3_Click_Running;
                 WPTesting.Enabled = true;
             }
         }
@@ -1540,7 +1541,7 @@ namespace XIVApp
         {
             OpenFileDialog OpenDialog = new OpenFileDialog();
             OpenDialog.InitialDirectory = Application.StartupPath + "\\" + Session.Player.Name + "\\";
-            OpenDialog.Filter = "XI Way Points|*.xiwps";
+            OpenDialog.Filter = Resources.Form1_LoadWayPointsBtn_Click_XI_Way_Points___xiwps;
             OpenDialog.FilterIndex = 1;
 
             if (OpenDialog.ShowDialog() == DialogResult.OK)
@@ -1584,7 +1585,7 @@ namespace XIVApp
                 DebugBox.AppendText(Way_Points_Loaded + " waypoints added." + Environment.NewLine);
 
                 // Saved
-                InformationLabel.Text = "Loaded Waypoints";
+                InformationLabel.Text = Resources.Form1_LoadWayPointsBtn_Click_Loaded_Waypoints;
 
             }
         }
@@ -1595,7 +1596,7 @@ namespace XIVApp
             {
                 SaveFileDialog SaveDialog = new SaveFileDialog();
                 SaveDialog.InitialDirectory = Application.StartupPath + "\\" + Session.Player.Name + "\\";
-                SaveDialog.Filter = "XI Way Points|*.xiwps";
+                SaveDialog.Filter = Resources.Form1_LoadWayPointsBtn_Click_XI_Way_Points___xiwps;
                 SaveDialog.FilterIndex = 1;
 
                 string Waypoint_Filename;
@@ -1633,7 +1634,7 @@ namespace XIVApp
                     fs.Close();
 
                     // Saved
-                    InformationLabel.Text = "Saved Waypoints";
+                    InformationLabel.Text = Resources.Form1_SaveWayPointsBtn_Click_Saved_Waypoints;
                     DebugBox.AppendText("Waypoints Saved: " + Waypoint_Filename + Environment.NewLine);
                 }
             }
@@ -1644,7 +1645,7 @@ namespace XIVApp
         {
             OpenFileDialog OpenDialog = new OpenFileDialog();
             OpenDialog.InitialDirectory = Application.StartupPath + "\\" + Session.Player.Name + "\\";
-            OpenDialog.Filter = "XI Mob List|*.ximbl";
+            OpenDialog.Filter = Resources.Form1_LoadMobListBtn_Click_XI_Mob_List___ximbl;
             OpenDialog.FilterIndex = 1;
 
             if (OpenDialog.ShowDialog() == DialogResult.OK)
@@ -1678,7 +1679,7 @@ namespace XIVApp
                 DebugBox.AppendText(Mobs_Loaded + " Mobs added." + Environment.NewLine);
 
                 // Saved
-                InformationLabel.Text = "Loaded Waypoints";
+                InformationLabel.Text = Resources.Form1_LoadWayPointsBtn_Click_Loaded_Waypoints;
 
             }
 
@@ -1694,7 +1695,7 @@ namespace XIVApp
             {
                 SaveFileDialog SaveDialog = new SaveFileDialog();
                 SaveDialog.InitialDirectory = Application.StartupPath + "\\" + Session.Player.Name + "\\";
-                SaveDialog.Filter = "XI Mob List|*.ximbl";
+                SaveDialog.Filter = Resources.Form1_LoadMobListBtn_Click_XI_Mob_List___ximbl;
                 SaveDialog.FilterIndex = 1;
 
                 string Moblist_Filename;
@@ -1732,7 +1733,7 @@ namespace XIVApp
                     fs.Close();
 
                     // Saved
-                    InformationLabel.Text = "Saved Mob List";
+                    InformationLabel.Text = Resources.Form1_SaveMobListBtn_Click_Saved_Mob_List;
                     DebugBox.AppendText("Mob List Saved: " + Moblist_Filename + Environment.NewLine);
                 }
             }
@@ -1743,7 +1744,7 @@ namespace XIVApp
         {
             OpenFileDialog OpenDialog = new OpenFileDialog();
             OpenDialog.InitialDirectory = Application.StartupPath + "\\" + Session.Player.Name + "\\";
-            OpenDialog.Filter = "XI Skill List|*.xiwsl";
+            OpenDialog.Filter = Resources.Form1_SaveWSListBtn_Click_XI_Skill_List___xiwsl;
             OpenDialog.FilterIndex = 1;
 
             if (OpenDialog.ShowDialog() == DialogResult.OK)
@@ -1793,7 +1794,7 @@ namespace XIVApp
                 DebugBox.AppendText(Skills_Loaded + " Skills added." + Environment.NewLine);
 
                 // Saved
-                InformationLabel.Text = "Loaded Skill List";
+                InformationLabel.Text = Resources.Form1_LoadWSListBtn_Click_Loaded_Skill_List;
 
             }
         }
@@ -1804,7 +1805,7 @@ namespace XIVApp
             {
                 SaveFileDialog SaveDialog = new SaveFileDialog();
                 SaveDialog.InitialDirectory = Application.StartupPath + "\\" + Session.Player.Name + "\\";
-                SaveDialog.Filter = "XI Skill List|*.xiwsl";
+                SaveDialog.Filter = Resources.Form1_SaveWSListBtn_Click_XI_Skill_List___xiwsl;
                 SaveDialog.FilterIndex = 1;
 
                 string SkillList_Filename;
@@ -1857,7 +1858,7 @@ namespace XIVApp
                     fs.Close();
 
                     // Saved
-                    InformationLabel.Text = "Saved Skill List";
+                    InformationLabel.Text = Resources.Form1_SaveWSListBtn_Click_Saved_Skill_List;
                     DebugBox.AppendText("Skill List Saved: " + SkillList_Filename + Environment.NewLine);
                 }
             }
@@ -2071,7 +2072,7 @@ namespace XIVApp
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            InformationLabel.Text = "Auto heal for: " + PLMemberA.Text + " activated. Heal@" + AutoHealPercent.Text + "%";
+            InformationLabel.Text = Resources.Form1_checkBox1_CheckedChanged_Auto_heal_for__ + PLMemberA.Text + Resources.Form1_checkBox1_CheckedChanged__activated__Heal_ + AutoHealPercent.Text + "%";
             string Command = "/target " + PLMemberA.Text;
             PowerSession.Windower.SendString(Command);
         }
@@ -2087,7 +2088,7 @@ namespace XIVApp
             else
                 FollowingCharacter = true;
 
-            InformationLabel.Text = PowerSession.Player.Name + " will auto follow: " + PLFollowingChar.Text;
+            InformationLabel.Text = PowerSession.Player.Name + Resources.Form1_checkBox1_CheckedChanged_1__will_auto_follow__ + PLFollowingChar.Text;
         }
         private void ClearLogButton_Click(object sender, EventArgs e)
         {

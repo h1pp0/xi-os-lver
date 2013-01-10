@@ -1,4 +1,6 @@
-﻿namespace XIVApp
+﻿using XIVApp.Properties;
+
+namespace XIVApp
 {
     partial class Form1
     {
@@ -887,7 +889,7 @@
             this.WPRecord.Name = "WPRecord";
             this.WPRecord.Size = new System.Drawing.Size(57, 25);
             this.WPRecord.TabIndex = 8;
-            this.WPRecord.Text = "Record";
+            this.WPRecord.Text = Resources.Form1_WPRecord_Click_Record;
             this.WPRecord.UseVisualStyleBackColor = false;
             this.WPRecord.Click += new System.EventHandler(this.WPRecord_Click);
             // 
@@ -1637,7 +1639,7 @@
             this.TestWPBtn.Name = "TestWPBtn";
             this.TestWPBtn.Size = new System.Drawing.Size(78, 27);
             this.TestWPBtn.TabIndex = 10;
-            this.TestWPBtn.Text = "Test WPs";
+            this.TestWPBtn.Text = Resources.Form1_button3_Click_Test_WPs;
             this.TestWPBtn.UseVisualStyleBackColor = true;
             this.TestWPBtn.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -1660,7 +1662,7 @@
             this.StartBotting.Name = "StartBotting";
             this.StartBotting.Size = new System.Drawing.Size(78, 42);
             this.StartBotting.TabIndex = 2;
-            this.StartBotting.Text = "START";
+            this.StartBotting.Text = Resources.Form1_StartBotting_Click_START;
             this.StartBotting.UseVisualStyleBackColor = true;
             this.StartBotting.Click += new System.EventHandler(this.StartBotting_Click);
             // 
