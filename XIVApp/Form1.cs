@@ -646,7 +646,7 @@ namespace XIVApp
             /* Check if the character is running and to a mob */
             if (Running_To_Mob && !At_Mob && !Fighting && !End_Of_Fight)
             {
-                if (String.IsNullOrEmpty(Session.Target.Name) && Session.Target.Type != NPCType.Mob)
+                if (String.IsNullOrEmpty(Session.Target.Name) || Session.Target.Type != NPCType.Mob)
                 {
                     Running_To_Mob = false;
                     Scanning_for_mobs = true;
