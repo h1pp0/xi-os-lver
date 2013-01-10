@@ -611,13 +611,13 @@ namespace XIVApp
                 End_Of_Fight = false;
 
                 is_Mob_Valid = Valid_Mobs.Contains(Session.Target.Name);
-                Thread.Sleep(400);
+                Thread.Sleep(150);
                 if (!String.IsNullOrEmpty(Session.Target.Name) && Session.Target.Name != Session.Player.Name && !Fighting && !Session.NPC.IsClaimed(Session.Target.ID) && Session.Target.Type == NPCType.Mob)
                 {
                     LevellingLog.AppendText("[" + DateTime.Now.ToLongTimeString() + "] " + "Target: " + Session.Target.Name + " (" + is_Mob_Valid + ")" + Environment.NewLine);
                 }
 
-                if (is_Mob_Valid && !Fighting && !Running_To_Mob && !End_Of_Fight && Session.Target.Status != Status.Fighting && Session.Target.SubID == 0)
+                if (is_Mob_Valid && !Fighting && !Running_To_Mob && !End_Of_Fight && Session.Target.Status != Status.Fighting && Session.Target.SubID == 0 && Session.Target.Type == NPCType.Mob)
                 {
                     // Valid Mob found!
                     Scanning_for_mobs = false;
@@ -646,7 +646,7 @@ namespace XIVApp
             /* Check if the character is running and to a mob */
             if (Running_To_Mob && !At_Mob && !Fighting && !End_Of_Fight)
             {
-                if (String.IsNullOrEmpty(Session.Target.Name))
+                if (String.IsNullOrEmpty(Session.Target.Name) && Session.Target.Type != NPCType.Mob)
                 {
                     Running_To_Mob = false;
                     Scanning_for_mobs = true;
@@ -654,7 +654,8 @@ namespace XIVApp
                     Session.Windower.SendKeyPress(KeyCode.NP_Number7);
                     LevellingLog.AppendText("[" + DateTime.Now.ToLongTimeString() + "] " + "Seem to have lost sight of mob... Start over." + Environment.NewLine);
                 }
-
+				
+				//if conditions above are met, we may want to not do this, not sure yet.
                 distance = Session.Navigator.DistanceTo(Session.Target.PosX, Session.Target.PosZ);
                 ShowDistance.Text = distance.ToString();
 
